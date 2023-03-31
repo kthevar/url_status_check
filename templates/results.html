@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>URL Checker Results</title>
+  </head>
+  <body>
+    <h1>URL Checker Results</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>HTTP Response</th>
+          <th>HTTP Status Code</th>
+          <th>Requester IP</th>
+          <th>Resolved DNS Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for result in results %}
+        <tr>
+          <td>{{ result.url }}</td>
+          <td>{{ result.http_response }}</td>
+          <td>{{ result.http_status_code }}</td>
+          <td>{{ result.requester_ip }}</td>
+          <td>{{ result.resolved_dns_target }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
